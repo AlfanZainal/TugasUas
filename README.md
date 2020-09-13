@@ -1,0 +1,5 @@
+# TugasUas
+Identitas 
+NIM   : 18104410037
+NAMA  : ALFAN ZAINAL MACFUD
+PRODI : TI A
