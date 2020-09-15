@@ -9,6 +9,16 @@ void draw(){
   background(72,201,223);
 int d;
 d = second();
+background(153,170,0+50*d,0);
+fill(#606421);
+ellipse(850,650,700,700);
+ellipse(240,550,700,700);
+fill(#0511E0);
+ellipse(300,650,650,350);
+ellipse(450,500,70,350);
+ellipse(400,500,70,350);
+ellipse(500,500,70,350);
+
 
 fill(235,186,84); //pohon
 noStroke();
