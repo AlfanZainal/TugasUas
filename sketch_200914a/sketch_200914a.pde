@@ -1,14 +1,17 @@
-float x, y, z;
-float size = 75;
+floatyoff = 0.0;
+
 
 void setup() {
   size (1080,600);
 }
 
 void draw(){
-  background(72,201,223);
-int d;
-d = second();
+  int d = second();
+  background(25,25,112);
+  strokeWeight(0);
+  fill(#906617);
+  rect (0,385,800,185);
+ 
 background(153,170,0+50*d,0);
 fill(#606421);
 ellipse(850,650,700,700);
@@ -55,5 +58,16 @@ ellipse(700,-100,80,50);
 ellipse(750,-100,95,75);
 ellipse(780,-100,80,55);
 ellipse(815,-100,75,40);
+
+//gelombang
+strokeWeight(1);
+fill(3,160,255);
+beginShape();
+float xoff = 0;
+for (float x=0; x<= width; x +=10) {
+  float y = map(noise(xoff, yoff), 0, 1, 460, 410);
+  vertex(x,y);
+  xoff += 0.05;
+}
 
 }
