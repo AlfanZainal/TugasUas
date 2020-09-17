@@ -1,4 +1,4 @@
-floatyoff = 0.0;
+float yoff = 0.0;
 
 
 void setup() {
@@ -7,57 +7,68 @@ void setup() {
 
 void draw(){
   int d = second();
-  background(25,25,112);
+  background(25,25,100);
   strokeWeight(0);
   fill(#906617);
   rect (0,385,800,185);
+  
+  //air terjun 
+  stroke(#906022);
+  fill(#906022);
+  rect(300,0,200,985);
+  //ellipse
+  stroke(#7CC7F5);
+  strokeWeight(1);
+  fill(3,160,255);
+  rect(370,0,80,985);
+  
+  //kolam
+  fill(3,160,225);
+  noStroke();
+  ellipse(600,630,170,100);
+  ellipse(630,630,220,120);
+  ellipse(600,650,240,70);
+  ellipse(600,670,260,100);
+  ellipse(620,600,340,100);
+  ellipse(620,660,300,100);
+  
+  //awan1
+strokeWeight(0);
+fill(#F2F2F2);
+ellipse(50+15*d, 180, 50, 35);
+ellipse(80+15*d, 180, 50, 50);
+ellipse(105+15*d, 180, 25, 25);
+ellipse(25+15*d, 180, 25, 25);
+
+//awan2
+strokeWeight(0);
+fill(#F2F2F2);
+ellipse(45+5*d, 130, 80, 80);
+ellipse(85+5*d, 130, 80, 80);
+ellipse(125+15*d, 130, 25, 25);
+ellipse(5+5*d, 130, 55, 55);
  
-background(153,170,0+50*d,0);
-fill(#606421);
-ellipse(850,650,700,700);
-ellipse(240,550,700,700);
-fill(#0511E0);
-ellipse(300,650,650,350);
-ellipse(450,500,70,350);
-ellipse(400,500,70,350);
-ellipse(500,500,70,350);
 
 
-fill(235,186,84); //pohon
+//pohon
+fill(235,186,84); 
 noStroke();
 smooth();
 beginShape();
-vertex(715,700);
-vertex(790,700);
-vertex(760,450);
-vertex(740,450);
+vertex(215,500);
+vertex(290,500);
+vertex(260,250);
+vertex(240,250);
 endShape();
 fill(71,162,26);
-ellipse(700,400,300,150);
-ellipse(700,450,150,100);
-ellipse(770,450,300,150);
-ellipse(760,340,200,60);
-ellipse(760,400,90,150);
+ellipse(200,200,100,150);
+ellipse(200,250,50,100);
+ellipse(270,250,150,150);
+ellipse(260,140,50,60);
+ellipse(260,200,40,150);
 endShape();
 stroke(0);
 
-//matahari
-fill(222+50*d,222,0);
-ellipse(700,70,100,100);
-
-//awan
-y=y+0.08;
-translate(y-200, height/2-2*size/2);
-noStroke();
-fill(255);
-ellipse(450,-50,70,45);
-ellipse(500,-50,85,65);
-ellipse(540,-50,70,35);
-
-ellipse(700,-100,80,50);
-ellipse(750,-100,95,75);
-ellipse(780,-100,80,55);
-ellipse(815,-100,75,40);
 
 //gelombang
 strokeWeight(1);
@@ -69,5 +80,9 @@ for (float x=0; x<= width; x +=10) {
   vertex(x,y);
   xoff += 0.05;
 }
+yoff += 0.01;
+vertex(width, height);
+vertex(0, height);
+endShape(CLOSE);
 
 }
